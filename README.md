@@ -57,7 +57,9 @@ The resistor limits the electrical current through the circuit. The speaker's im
 
 [Open the KiCad schematic](hardware/esp32-Speaker.kicad_sch)
 
-KiCad screenshot: pending. See the editable schematic linked above.
+![KiCad speaker circuit](docs/images/kicad-schematic.png)
+
+*Figure 1. KiCad schematic showing D2, resistor R1 (330 Ω), speaker LS1 and ground.*
 
 
 
@@ -154,4 +156,3 @@ This project successfully demonstrated basic audio generation using an Arduino N
 It also provided practical experience with breadboard assembly, Arduino programming, component connections, and electronic schematic documentation in KiCad.
 
 The circuit serves as a starting point for future audio-based embedded systems projects.
-
