@@ -10,6 +10,7 @@ This repository records my progress learning embedded systems: building circuits
 |---|---|---|
 | [01 — Speaker](Speaker/README.md) | Generate musical tones with a speaker and the tone() function | Initial audio test successful |
 | [02 — Button](Button/README.md) | Read a push button using INPUT_PULLUP and report state changes | Button input tested successfully; Wi-Fi extension pending |
+| [03 — FanBlade](FanBlade/README.md) | Control a DC motor with an L293D and a button | Motor rotation confirmed; additional tests pending |
 
 ## Learning goals
 
@@ -32,10 +33,15 @@ ESP32-Folder/
 │   ├── firmware/speaker_test/speaker_test.ino
 │   ├── hardware/esp32-Speaker.kicad_sch
 │   └── docs/images/
-└── Button/
+├── Button/
+│   ├── README.md
+│   ├── firmware/button_test/button_test.ino
+│   ├── hardware/esp32-Button.kicad_sch
+│   └── docs/images/
+└── FanBlade/
     ├── README.md
-    ├── firmware/button_test/button_test.ino
-    ├── hardware/esp32-Button.kicad_sch
+    ├── firmware/fan_blade_test/fan_blade_test.ino
+    ├── hardware/esp32-FanBlade.kicad_sch
     └── docs/images/
 ```
 
