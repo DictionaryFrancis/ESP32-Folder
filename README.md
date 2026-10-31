@@ -6,6 +6,20 @@
 **Platform:** Arduino Nano ESP32  
 **Tools:** Arduino IDE, KiCad 10
 
+## Repository structure
+
+- [Firmware](firmware/speaker_test/speaker_test.ino): Arduino sketch, ready to open in Arduino IDE.
+- [Hardware](hardware/esp32-Speaker.kicad_sch): editable KiCad schematic.
+- [Assembly photo](docs/images/breadboard-assembly.jpeg): physical circuit reference, embedded below.
+- LICENSE: project license.
+
+## Quick start
+
+1. Download or clone the repository.
+2. Open the schematic in KiCad to inspect the connections.
+3. Open firmware/speaker_test/speaker_test.ino in Arduino IDE.
+4. Select Arduino Nano ESP32 and the connected port, then upload.
+
 ## 1. Overview
 
 This project demonstrates how to generate simple musical tones using an Arduino Nano ESP32 and a small passive speaker.
@@ -41,19 +55,23 @@ The resistor limits the electrical current through the circuit. The speaker's im
 
 ### KiCad schematic
 
-![KiCad speaker circuit](images/kicad-schematic.png)
+[Open the KiCad schematic](hardware/esp32-Speaker.kicad_sch)
 
-*Figure 1. Schematic showing D2, resistor R1 (330 Ω), speaker LS1 and ground.*
+KiCad screenshot: pending. See the editable schematic linked above.
+
+
 
 ### Physical assembly
 
-![Arduino Nano ESP32 breadboard assembly](images/breadboard-assembly.jpg)
+
+
+![Arduino Nano ESP32 breadboard assembly](docs/images/breadboard-assembly.jpeg)
 
 *Figure 2. Physical breadboard connections used during testing.*
 
 ## 4. Arduino source code
 
-Save the following as `speaker_test.ino`.
+Open [speaker_test.ino](firmware/speaker_test/speaker_test.ino) in Arduino IDE.
 
 ```cpp
 const int speakerPin = D2;
@@ -116,9 +134,9 @@ This result confirms that the test circuit produced sound. It does not establish
 
 ## 6. Arduino IDE screenshot
 
-![Arduino IDE test program](images/arduino-ide.png)
+Arduino IDE screenshot: pending. Add the actual screenshot to docs/images/ when available.
 
-*Figure 3. Arduino IDE showing the uploaded audio test sketch.*
+
 
 ## 7. Future improvements
 
@@ -136,3 +154,4 @@ This project successfully demonstrated basic audio generation using an Arduino N
 It also provided practical experience with breadboard assembly, Arduino programming, component connections, and electronic schematic documentation in KiCad.
 
 The circuit serves as a starting point for future audio-based embedded systems projects.
+

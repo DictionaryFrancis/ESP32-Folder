@@ -1,0 +1,17 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+# KiCad local and temporary files
+*.lck
+*.kicad_prl
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-backups/
+# Arduino build output
+build/
+*.elf
+*.hex
+*.bin
