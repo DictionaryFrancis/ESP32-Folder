@@ -53,7 +53,7 @@ ESP32-Folder/
 └── DFPlayer/
     ├── README.md
     ├── firmware/dfplayer_test/dfplayer_test.ino
-    ├── hardware/README.md
+    ├── hardware/esp32-DFPlayer.kicad_sch
     └── docs/images/
 ```
 

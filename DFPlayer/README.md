@@ -17,7 +17,12 @@ This is a standalone playback test. Bluetooth control is a future extension, not
 - [Hardware notes](hardware/README.md): final connection table and power arrangement.
 - [Initial troubleshooting photo](docs/images/initial-dfplayer-wiring.jpeg): historical external-supply wiring, not the successful final configuration.
 
-No final KiCad schematic or successful-VBUS assembly photo has been supplied yet. No new image was generated. Music files and the full third-party datasheet are not redistributed.
+- [KiCad schematic](hardware/esp32-DFPlayer.kicad_sch): user's supplied editable circuit file, preserved unchanged.
+- [Schematic screenshot](docs/images/kicad-schematic.png): latest supplied circuit screenshot; title-block settings are stored in the editable schematic.
+- [Assembly photo](docs/images/breadboard-assembly.jpeg), [Nano VBUS detail](docs/images/nano-esp32-vbus-connection.jpeg) and [DFPlayer detail](docs/images/dfplayer-connections.jpeg): user-supplied photos of the reported working arrangement.
+- [Arduino Nano ESP32 user manual](docs/references/arduino-nano-esp32-user-manual.pdf): supplied reference for VBUS, section 11.4 on page 15.
+
+No new image was generated. Music files are not redistributed. The Arduino reference PDF is preserved as supplied and remains third-party documentation under its own terms.
 
 ## 3. Components
 
@@ -52,6 +57,34 @@ Both speaker wires connect exclusively to SPK1/SPK2. Neither is a permanent GND.
 
 Start at low volume. The total USB supply, board power path and DFPlayer current requirements still constrain usable volume. If resets or noise recur, stop playback and investigate power/connections rather than increasing the volume.
 
+### KiCad schematic
+
+![DFPlayer circuit schematic](docs/images/kicad-schematic.png)
+
+*Figure 1. User-supplied schematic showing VBUS to VCC, D3 through R1 to RX, D4 to TX, common GND and speaker between SPK1/SPK2.*
+
+[Open the editable schematic](hardware/esp32-DFPlayer.kicad_sch). J3 represents only the DFPlayer left header, using local connector numbering. Unused right-side module pins are omitted. The board representation is adapted from a classic Nano template: VBUS is corrected for this circuit, while unused board labels remain unverified. No electrical-rule check or complete PCB pin-mapping verification is claimed.
+
+### Working assembly and connector photos
+
+![USB-powered Nano ESP32 and DFPlayer assembly](docs/images/breadboard-assembly.jpeg)
+
+*Figure 2. User-supplied overview of the working VBUS-powered arrangement. Other earlier project hardware remains physically on the breadboard and is not part of the DFPlayer schematic.*
+
+![Nano ESP32 VBUS connection](docs/images/nano-esp32-vbus-connection.jpeg)
+
+*Figure 3. Nano ESP32 connector detail showing the VBUS supply lead and UART wiring. Some contacts are obscured; use the connection table for pin identification.*
+
+![DFPlayer module wiring](docs/images/dfplayer-connections.jpeg)
+
+*Figure 4. DFPlayer connector detail, microSD card and resistor. Photos record the user's assembly; they do not independently verify every hidden connection.*
+
+### VBUS reference
+
+The supplied [Arduino Nano ESP32 user manual](docs/references/arduino-nano-esp32-user-manual.pdf) identifies the board as ABX00083. Section 11.4, page 15, states that the 5 V supply is available through VBUS from USB-C; powering via VIN alone does not activate VBUS. The power tree is on page 14 and header JP1 pin 12 is listed as VBUS on page 16.
+
+This supports the supply connection used here; it does not guarantee unlimited output current or successful playback at maximum volume.
+
 ## 5. SD card preparation
 
 The command playMp3Folder(1) expects:
@@ -65,7 +98,16 @@ SD card root/
 
 The mp3 folder belongs directly at the card root, not inside DCIM. Enable filename extensions in Windows if needed to avoid a doubled extension. The file must contain actual MP3 audio, not another format renamed to .mp3.
 
-For a reproducible setup use a supported card up to 32 GB formatted FAT16/FAT32. Only the user's 16 GB capacity was confirmed during the session; the filesystem was not recorded. Back up personal files before any format operation. Existing unrelated files are not by themselves evidence of a fault.
+### Card format
+
+- **Capacity:** up to 32 GB; the card used in this project is 16 GB.
+- **Recommended filesystem for this 16 GB card: FAT32.** Do not use exFAT or NTFS for this setup. The module also supports FAT16 on suitable cards.
+- **Folder:** mp3 at the card root, alongside DCIM, not inside it.
+- **Track:** 0001.mp3; full path /mp3/0001.mp3. On a Windows card mounted as D:, this is D:\mp3\0001.mp3.
+
+To check the filesystem in Windows, right-click the SD card drive in File Explorer and select Properties. If formatting is necessary, back up all files first, then select FAT32 in the Format dialog. Formatting erases card contents. Leave allocation unit size at the default offered for the selected FAT32 format.
+
+Only the user's 16 GB capacity was confirmed during the session; the filesystem used for the successful test was not recorded. This recommendation is not a claim that the original card was inspected or reformatted. Existing unrelated files are not by themselves evidence of a fault.
 
 Safely eject the card and insert/remove it with DFPlayer power disconnected.
 
@@ -102,7 +144,7 @@ The comparison implicates the previous battery/module supply arrangement, but no
 
 ![Initial DFPlayer wiring during troubleshooting](docs/images/initial-dfplayer-wiring.jpeg)
 
-*Figure 1. Earlier wiring using the external module during troubleshooting. This predates the working VBUS configuration and may show connections later corrected. Use the final wiring table, not this photo, for assembly.*
+*Figure 5. Earlier wiring using the external module during troubleshooting. This predates the working VBUS configuration and may show connections later corrected. Use the final wiring table, not this photo, for assembly.*
 
 ## 8. Learning notes: voltage and current
 
@@ -114,7 +156,7 @@ A correctly regulated 5 V source rated for more current than the circuit needs d
 
 This documentation records the user's successful playback report. The saved firmware is an exact copy of the actual sketch supplied by the user and was verified by file hash. No fresh compile or hardware test was performed during documentation.
 
-- Add a final VBUS-powered assembly photo and KiCad schematic.
+- Final schematic, schematic screenshot and three assembly/detail photos have been added; run KiCad checks and verify unused template labels before PCB work.
 - Record speaker ratings, SD filesystem and USB source specifications.
 - Add play/pause controls, then consider Android BLE commands.
 - Verify power requirements before increasing volume or sharing a supply with a motor.
@@ -123,4 +165,5 @@ This documentation records the user's successful playback report. The saved firm
 
 - [DFRobot DFPlayer documentation and pinout](https://wiki.dfrobot.com/dfr0299).
 - Local source reviewed during the experiment: A700000006944490.pdf, page 3. Full PDF not included.
+- [Arduino Nano ESP32 user manual](docs/references/arduino-nano-esp32-user-manual.pdf), supplied as A700000016172047.pdf; section 11.4 (VBUS), page 15; power tree, page 14; JP1 pinout, page 16. Third-party Arduino reference, not authored by this project.
 - [Repository license](../LICENSE).
