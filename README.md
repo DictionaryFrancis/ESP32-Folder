@@ -12,6 +12,7 @@ This repository records my progress learning embedded systems: building circuits
 | [02 — Button](Button/README.md) | Read a push button using INPUT_PULLUP and report state changes | Button input tested successfully; Wi-Fi extension pending |
 | [03 — FanBlade](FanBlade/README.md) | Control a DC motor with an L293D and a button | Motor rotation confirmed; additional tests pending |
 | [04 — BluetoothMotor](BluetoothMotor/README.md) | Control the motor from a custom Android BLE app | User confirmed app-driven motor operation |
+| [05 — DFPlayer](DFPlayer/README.md) | Play microSD music through a DFPlayer Mini | User confirmed playback using USB/VBUS power |
 
 ## Learning goals
 
@@ -44,10 +45,15 @@ ESP32-Folder/
 │   ├── firmware/fan_blade_test/fan_blade_test.ino
 │   ├── hardware/esp32-FanBlade.kicad_sch
 │   └── docs/images/
-└── BluetoothMotor/
+├── BluetoothMotor/
+│   ├── README.md
+│   ├── firmware/bluetooth_motor/bluetooth_motor.ino
+│   ├── android/MotorDC_via_BLT/
+│   └── docs/images/
+└── DFPlayer/
     ├── README.md
-    ├── firmware/bluetooth_motor/bluetooth_motor.ino
-    ├── android/MotorDC_via_BLT/
+    ├── firmware/dfplayer_test/dfplayer_test.ino
+    ├── hardware/README.md
     └── docs/images/
 ```
 
