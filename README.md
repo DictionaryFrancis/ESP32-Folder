@@ -11,6 +11,7 @@ This repository records my progress learning embedded systems: building circuits
 | [01 — Speaker](Speaker/README.md) | Generate musical tones with a speaker and the tone() function | Initial audio test successful |
 | [02 — Button](Button/README.md) | Read a push button using INPUT_PULLUP and report state changes | Button input tested successfully; Wi-Fi extension pending |
 | [03 — FanBlade](FanBlade/README.md) | Control a DC motor with an L293D and a button | Motor rotation confirmed; additional tests pending |
+| [04 — BluetoothMotor](BluetoothMotor/README.md) | Control the motor from a custom Android BLE app | User confirmed app-driven motor operation |
 
 ## Learning goals
 
@@ -38,10 +39,15 @@ ESP32-Folder/
 │   ├── firmware/button_test/button_test.ino
 │   ├── hardware/esp32-Button.kicad_sch
 │   └── docs/images/
-└── FanBlade/
+├── FanBlade/
+│   ├── README.md
+│   ├── firmware/fan_blade_test/fan_blade_test.ino
+│   ├── hardware/esp32-FanBlade.kicad_sch
+│   └── docs/images/
+└── BluetoothMotor/
     ├── README.md
-    ├── firmware/fan_blade_test/fan_blade_test.ino
-    ├── hardware/esp32-FanBlade.kicad_sch
+    ├── firmware/bluetooth_motor/bluetooth_motor.ino
+    ├── android/MotorDC_via_BLT/
     └── docs/images/
 ```
 

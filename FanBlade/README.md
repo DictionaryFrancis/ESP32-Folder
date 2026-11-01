@@ -11,7 +11,7 @@
 - [Firmware](firmware/fan_blade_test/fan_blade_test.ino): button-controlled motor sketch.
 - [Hardware](hardware/esp32-FanBlade.kicad_sch): supplied editable KiCad schematic.
 - [Schematic screenshot](docs/images/kicad-schematic.png): supplied circuit image.
-- Physical assembly photo: pending; no placeholder image was generated.
+- [Physical assembly photo](docs/images/breadboard-assembly.jpeg): actual reused motor circuit, photographed during the later Bluetooth project.
 
 ## 1. Overview
 
@@ -79,6 +79,12 @@ The schematic uses an adapted classic Nano template. Unused board labels are not
 
 These are recommendations, not claims about components fitted to the tested build. Keep the circuit unpowered when changing wiring and remove the fan blade for initial tests.
 
+### Physical assembly
+
+![Motor breadboard assembly](docs/images/breadboard-assembly.jpeg)
+
+*Figure 2. Same motor assembly reused for Project 04, photographed on 1 November 2026. The button remains fitted; its behavior depends on the loaded firmware.*
+
 ## 4. Firmware and operation
 
 Open [fan_blade_test.ino](firmware/fan_blade_test/fan_blade_test.ino), select Arduino Nano ESP32 and the connected port, then upload. No additional libraries are required.
@@ -131,7 +137,7 @@ The Elegoo lesson's breadboard picture omitted a clear pin 16 supply connection.
 
 ## 7. Next steps
 
-- Add the final physical assembly photo.
+- Add any further photos needed to show connections clearly; a reused assembly photo is now included.
 - Confirm and record release-to-stop and reverse-direction results.
 - Add the recommended pull-down, unused-input terminations and decoupling.
 - Measure supply voltage and motor current when a meter is available.

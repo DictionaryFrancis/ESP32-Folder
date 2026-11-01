@@ -1,0 +1,11 @@
+# Local Android files and generated output
+**/build/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/.cxx/
+**/local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
