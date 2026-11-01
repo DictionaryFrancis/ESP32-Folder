@@ -13,6 +13,7 @@ This repository records my progress learning embedded systems: building circuits
 | [03 — FanBlade](FanBlade/README.md) | Control a DC motor with an L293D and a button | Motor rotation confirmed; additional tests pending |
 | [04 — BluetoothMotor](BluetoothMotor/README.md) | Control the motor from a custom Android BLE app | User confirmed app-driven motor operation |
 | [05 — DFPlayer](DFPlayer/README.md) | Play microSD music through a DFPlayer Mini | User confirmed playback using USB/VBUS power |
+| [06 — ParkingSensor](ParkingSensor/README.md) | Ultrasonic distance, buzzer and custom Android BLE display | User confirmed standalone and Bluetooth operation |
 
 ## Learning goals
 
@@ -50,11 +51,16 @@ ESP32-Folder/
 │   ├── firmware/bluetooth_motor/bluetooth_motor.ino
 │   ├── android/MotorDC_via_BLT/
 │   └── docs/images/
-└── DFPlayer/
+├── DFPlayer/
+│   ├── README.md
+│   ├── firmware/dfplayer_test/dfplayer_test.ino
+│   ├── hardware/esp32-DFPlayer.kicad_sch
+│   └── docs/images/
+└── ParkingSensor/
     ├── README.md
-    ├── firmware/dfplayer_test/dfplayer_test.ino
-    ├── hardware/esp32-DFPlayer.kicad_sch
-    └── docs/images/
+    ├── firmware/parking_sensor_ble/parking_sensor_ble.ino
+    ├── android/Distance_Buzzer/
+    └── hardware/README.md
 ```
 
 Each new project gets its own folder following the same structure:

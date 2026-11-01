@@ -9,3 +9,4 @@ See the [main README](README.md) for the repository overview and folder conventi
 | FanBlade | [Report](FanBlade/README.md) | [Sketch](FanBlade/firmware/fan_blade_test/fan_blade_test.ino) | [KiCad](FanBlade/hardware/esp32-FanBlade.kicad_sch) |
 | BluetoothMotor | [Report](BluetoothMotor/README.md) | [Sketch](BluetoothMotor/firmware/bluetooth_motor/bluetooth_motor.ino) | [Shared FanBlade circuit](FanBlade/hardware/esp32-FanBlade.kicad_sch) |
 | DFPlayer | [Report](DFPlayer/README.md) | [Sketch](DFPlayer/firmware/dfplayer_test/dfplayer_test.ino) | [KiCad](DFPlayer/hardware/esp32-DFPlayer.kicad_sch) |
+| ParkingSensor | [Report](ParkingSensor/README.md) | [Sketch](ParkingSensor/firmware/parking_sensor_ble/parking_sensor_ble.ino) | [Wiring notes](ParkingSensor/hardware/README.md) |

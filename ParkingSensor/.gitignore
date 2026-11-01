@@ -1,0 +1,11 @@
+**/build/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/local.properties
+*.apk
+*.jks
+*.keystore
+
+# Superseded local starter; actual app is android/Distance_Buzzer/
+/android/ESP32ParkingSensor/
