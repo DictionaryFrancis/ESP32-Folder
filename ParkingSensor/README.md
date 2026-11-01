@@ -22,7 +22,7 @@ The fixed sensor measures proximity in front of it. The app's coloured arc is a 
 - [AndroidManifest.xml](android/Distance_Buzzer/app/src/main/AndroidManifest.xml): permissions and launcher.
 - [Hardware notes](hardware/README.md).
 
-The Android source is copied from the user's Distance_Buzzer project, not the generic starter. Machine-specific SDK paths, generated builds, IDE caches and signing keys are excluded. The supplied ESP32 sketch is the compiled BLE version from this session; an independently saved final sketch has not yet been supplied for comparison.
+The Android source is copied from the user's Distance_Buzzer project, not the generic starter. Machine-specific SDK paths, generated builds, IDE caches and signing keys are excluded. The ESP32 sketch is an exact, hash-verified copy of the user-supplied successful Distance_Buzzer.ino. Its code matches the compiled BLE version from this session. It is stored as firmware/parking_sensor_ble/parking_sensor_ble.ino so the Arduino sketch filename matches its containing folder; the original file is unchanged.
 
 KiCad schematic, physical assembly photos and screenshots of the working app are pending. No placeholder photos or fabricated measurement screenshots are included. No APK binary is committed; build it from the source.
 
